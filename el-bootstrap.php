@@ -22,8 +22,8 @@ else
 fi
 
 ### Install the Puppet yum repo ###
-#rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-`sed -n '{s/^.* \([0-9]\+\)\.[0-9]\+ .*$/\1/p }' < /etc/redhat-release`.noarch.rpm
-rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-`cat /etc/redhat-release | grep -oE '[0-9]+\.[0-9]+' | cut -c1`.noarch.rpm
+rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-`cat /etc/redhat-release | grep -oE '[0-9]+\.[0-9]+' | cut -c1`.noarch.rpm
+
 [ $? != 0 ] && echo "A problem has occured adding the Puppet repo." && exit 1
 
 ### Install Puppet ###
