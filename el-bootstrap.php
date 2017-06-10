@@ -42,12 +42,12 @@ echo 'grep -q \'environment=\' /etc/puppetlabs/puppet/puppet.conf || sed -i_\"${
 ?>
 
 ### Initial Puppet checkin ###
-puppet agent -t --waitforcert=10 | tee /var/log/el-bootstrap.log
+/opt/puppetlabs/bin/puppet agent -t --waitforcert=10 | tee /var/log/puppet-bootstrap.log
 
 ### Enable Puppet service ###
-service puppet start
+/opt/puppetlabs/bin/puppet resource service puppet ensure=running --environment production
 [ $? != 0 ] && echo "A problem has occured starting the Puppet agent." && exit 1
-chkconfig puppet on
+/opt/puppetlabs/bin/puppet resource service puppet enable=true --environment production
 [ $? != 0 ] && echo "A problem has occured enabling the Puppet agent on boot." && exit 1
 
 ### Done ###
