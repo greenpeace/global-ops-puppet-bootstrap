@@ -14,7 +14,7 @@ else
 fi
 
 ### Pre-existing installation detection ###
-if [ -f /etc/puppet/puppet.conf ]
+if [ -f /etc/puppet/puppet.conf ] || [ -f /etc/puppetlabs/puppet/puppet.conf ]
 then
  echo "Puppet already installed." ; exit 1
 else

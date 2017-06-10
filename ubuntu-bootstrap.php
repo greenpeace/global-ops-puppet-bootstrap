@@ -73,8 +73,8 @@ grep -q '\[main\]' /etc/puppetlabs/puppet/puppet.conf || echo '[main]' >> /etc/p
 grep -q '\[agent\]' /etc/puppetlabs/puppet/puppet.conf || echo '[agent]' >> /etc/puppetlabs/puppet/puppet.conf
 
 <?php
-echo 'grep -q \'server=\' /etc/puppet/puppet.conf || sed -i_\"${TIMESTAMP}\"-1.bak \'/\\[agent\\]/i server=' . $_GET["master"] . "\' /etc/puppet/puppet.conf\n";
-echo 'grep -q \'environment=\' /etc/puppet/puppet.conf || sed -i_\"${TIMESTAMP}\"-2.bak \'/\\[agent\\]/i environment=' . $_GET["environment"] . "\' /etc/puppet/puppet.conf";
+echo 'grep -q \'server=\' /etc/puppetlabs/puppet/puppet.conf || sed -i_\"${TIMESTAMP}\"-1.bak \'/\\[agent\\]/i server=' . $_GET["master"] . "\' /etc/puppetlabs/puppet/puppet.conf\n";
+echo 'grep -q \'environment=\' /etc/puppetlabs/puppet/puppet.conf || sed -i_\"${TIMESTAMP}\"-2.bak \'/\\[agent\\]/i environment=' . $_GET["environment"] . "\' /etc/puppetlabs/puppet/puppet.conf";
 ?>
 
 ### Initial Puppet checkin ###
