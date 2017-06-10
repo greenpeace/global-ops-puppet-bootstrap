@@ -32,7 +32,9 @@ contents don't change on you unexpectedly.
 You can use [curl](https://linux.die.net/man/1/curl), which exists in most linux distributions by default, to pipe the script into a shell for execution. This must be run as the root user or via [sudo](https://linux.die.net/man/8/sudo). For example:
 
 `curl -s https://www.example.com/bootstrap-gce | bash`
+
 or
+
 `curl -s "https://www.example.com/bootstrap.php?master=puppet.example.com&environment=production" | bash`
 
 In the case of GCE, you can use metadata to define a [startup-script](https://cloud.google.com/compute/docs/startupscript) and place the curl statement there.
