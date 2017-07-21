@@ -26,9 +26,9 @@ yum -y install puppet-agent
 [ $? != 0 ] && echo "A problem has occured installing the Puppet agent." && exit 1
 
 ### Configure Puppet Agent if server and environment are not already set ###
-TIMESTAMP = `date +%Y%m%d`
-PUPPET_SERVER = "puppet-02.c.planet-4-151612.internal"
-PUPPET_ENVIRONMENT = "tam_develop"
+TIMESTAMP=`date +%Y%m%d`
+PUPPET_SERVER="puppet-02.c.planet-4-151612.internal"
+PUPPET_ENVIRONMENT="tam_develop"
 
 grep -q '\[main\]' /etc/puppetlabs/puppet/puppet.conf || echo '[main]' >> /etc/puppetlabs/puppet/puppet.conf
 grep -q '\[agent\]' /etc/puppetlabs/puppet/puppet.conf || echo '[agent]' >> /etc/puppetlabs/puppet/puppet.conf
