@@ -17,7 +17,7 @@ else
 fi
 
 ### Install the Puppet yum repo ###
-rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-`cat /etc/redhat-release | grep -oE '[0-9]+\.[0-9]+' | cut -c1`.noarch.rpm
+rpm -ivh https://yum.puppet.com/puppet6/puppet6-release-el-`cat /etc/redhat-release | grep -oE '[0-9]+\.[0-9]+' | cut -c1`.noarch.rpm
 
 [ $? != 0 ] && echo "A problem has occured adding the Puppet repo." && exit 1
 
