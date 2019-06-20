@@ -50,7 +50,7 @@ if (!($PuppetInstalled)) {
   }
 
   # Install it - msiexec will download from the url
-  $install_args = @("/qn", "/norestart","/i", $MsiUrl, "PUPPET_MASTER_SERVER=$env:puppet_master", "PUPPET_AGENT_ENVIRONMENT=$env:puppet_environment")
+  $install_args = @("/qn", "/norestart","/i", $MsiUrl, "PUPPET_MASTER_SERVER=[System.Environment]::GetEnvironmentVariable('puppet_master','machine')", "PUPPET_AGENT_ENVIRONMENT=[System.Environment]::GetEnvironmentVariable('puppet_environment','machine')")
   Write-Host "Installing Puppet. Running msiexec.exe $install_args"
   $process = Start-Process -FilePath msiexec.exe -ArgumentList $install_args -Wait -PassThru
   if ($process.ExitCode -ne 0) {
