@@ -1,3 +1,5 @@
+# Repo has moved to: https://gitlab.greenpeace.org/gp/git/core-services/puppet/puppet_scripts
+
 # Puppet 4 Bootstrap Scripts
 
 This repository contains scripts for setting
